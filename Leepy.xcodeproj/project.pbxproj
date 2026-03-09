@@ -6,13 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DD8531B22F5EA2B0007C0EA0 /* HotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DDD32ABC2F5E738800337CDC /* Leepy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leepy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DD8531AE2F5E9404007C0EA0 /* Exceptions for "Leepy" folder in "Leepy" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DDD32ABB2F5E738800337CDC /* Leepy */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DDD32ABE2F5E738800337CDC /* Leepy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DD8531AE2F5E9404007C0EA0 /* Exceptions for "Leepy" folder in "Leepy" target */,
+			);
 			path = Leepy;
 			sourceTree = "<group>";
 		};
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8531B22F5EA2B0007C0EA0 /* HotSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +70,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD32AC92F5E738900337CDC /* Build configuration list for PBXNativeTarget "Leepy" */;
 			buildPhases = (
+				DD8531AF2F5EA286007C0EA0 /* ShellScript */,
 				DDD32AB82F5E738800337CDC /* Sources */,
 				DDD32AB92F5E738800337CDC /* Frameworks */,
 				DDD32ABA2F5E738800337CDC /* Resources */,
@@ -65,6 +84,7 @@
 			);
 			name = Leepy;
 			packageProductDependencies = (
+				DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */,
 			);
 			productName = Leepy;
 			productReference = DDD32ABC2F5E738800337CDC /* Leepy.app */;
@@ -94,6 +114,9 @@
 			);
 			mainGroup = DDD32AB32F5E738800337CDC;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDD32ABD2F5E738800337CDC /* Products */;
 			projectDirPath = "";
@@ -113,6 +136,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DD8531AF2F5EA286007C0EA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$CONFIGURATION\" != \"Debug\" ]; then\n    exit 0\nfi\n\nif [[ \"$SDK_NAME\" == *simulator* ]]; then\n    exit 0\nfi\n\nRESOURCES=\"/Applications/InjectionIII.app/Contents/Resources\"\n\nif [ -f \"$RESOURCES/copy_bundle.sh\" ]; then\n    \"$RESOURCES/copy_bundle.sh\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDD32AB82F5E738800337CDC /* Sources */ = {
@@ -254,27 +297,44 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NUFR97X3A;
+				EMIT_FRONTEND_COMMAND_LINES = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Leepy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to capture landscapes, portraits, and videos. Your photos and videos can decorate your profile or share with friends. They're securely stored on your device and only shared with your permission. Privacy and security are protected.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access for recording voice messages and sharing audio. Audio stays on your device unless you share. Privacy is our priority.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access your photo album data so that you can select and upload videos and pictures. All the selected files will only be used for the purposes you have approved, and they will be securely stored on your device. They will only be shared with others upon your consent.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bvhtur.Leepy;
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"-Xlinker",
+					"-interposable",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -287,26 +347,38 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NUFR97X3A;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Leepy/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to capture landscapes, portraits, and videos. Your photos and videos can decorate your profile or share with friends. They're securely stored on your device and only shared with your permission. Privacy and security are protected.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access for recording voice messages and sharing audio. Audio stays on your device unless you share. Privacy is our priority.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access your photo album data so that you can select and upload videos and pictures. All the selected files will only be used for the purposes you have approved, and they will be securely stored on your device. They will only be shared with others upon your consent.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bvhtur.Leepy;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -332,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/johnno1962/HotSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */;
+			productName = HotSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DDD32AB42F5E738800337CDC /* Project object */;
 }

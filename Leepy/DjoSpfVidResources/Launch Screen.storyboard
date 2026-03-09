@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeepySplashBg" translatesAutoresizingMaskIntoConstraints="NO" id="56l-Jv-O5b">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="LeepySplashBanner" translatesAutoresizingMaskIntoConstraints="NO" id="lqN-I5-tx7">
+                                <rect key="frame" x="150.66666666666666" y="275" width="92" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="HkY-Ez-StI"/>
+                                    <constraint firstAttribute="width" constant="92" id="YoT-Xc-3uW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leepy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPY-jQ-CbE">
+                                <rect key="frame" x="149.66666666666666" y="378" width="93.666666666666657" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lqN-I5-tx7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="275" id="48W-GP-K8g"/>
+                            <constraint firstItem="56l-Jv-O5b" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="R9q-Xh-HPa"/>
+                            <constraint firstItem="lqN-I5-tx7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tey-ZB-Ebd"/>
+                            <constraint firstAttribute="bottom" secondItem="56l-Jv-O5b" secondAttribute="bottom" id="apq-eI-tIK"/>
+                            <constraint firstAttribute="centerX" secondItem="RPY-jQ-CbE" secondAttribute="centerX" id="fDS-d5-izM"/>
+                            <constraint firstAttribute="trailing" secondItem="56l-Jv-O5b" secondAttribute="trailing" id="flF-k2-7Tc"/>
+                            <constraint firstItem="RPY-jQ-CbE" firstAttribute="top" secondItem="lqN-I5-tx7" secondAttribute="bottom" constant="11" id="iTo-yr-Sfi"/>
+                            <constraint firstItem="56l-Jv-O5b" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="rGu-I8-6l4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LeepySplashBanner" width="512" height="512"/>
+        <image name="LeepySplashBg" width="375" height="812"/>
+    </resources>
+</document>
