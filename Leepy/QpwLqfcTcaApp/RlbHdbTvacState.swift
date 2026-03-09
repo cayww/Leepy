@@ -3,12 +3,12 @@ import SwiftData
 import SwiftUI
 
 @MainActor
-final class DhutRpbaJgwState: ObservableObject {
-  @Published var wfzqCubCpmUser: WsctDlnKessUser? = nil
+final class RlbHdbTvacState: ObservableObject {
+  @Published var wfzqCubCpmUser: UserModel? = nil
   @Published var vkyeFxuEaaPhase: WwaQhwoEkuPhase = .nipjSeaNvbSplash
   func tnngDfrhGkgtAddCoins(_ mpkVfgBazdAmount: Int) {
     guard let user = wfzqCubCpmUser else { return }
-    user.zkuiBvnFmuyCoin += mpkVfgBazdAmount
+    user.coins += mpkVfgBazdAmount
   }
   func hzglZtiFzlLogout() {
     vkyeFxuEaaPhase = .asqLicvGlkGuide

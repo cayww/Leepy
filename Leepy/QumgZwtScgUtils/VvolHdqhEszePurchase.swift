@@ -9,7 +9,7 @@ struct CoinProduct: Hashable, Identifiable, Decodable {
 }
 
 @MainActor
-final class DpcyDvfCnfmPurchaseManager: NSObject, ObservableObject {
+final class VvolHdqhEszePurchase: NSObject, ObservableObject {
 
   @Published var products: [SKProduct] = []
   @Published var purchasedIds: Set<String> = []
@@ -49,13 +49,13 @@ final class DpcyDvfCnfmPurchaseManager: NSObject, ObservableObject {
   }
 }
 
-extension DpcyDvfCnfmPurchaseManager: SKProductsRequestDelegate {
+extension VvolHdqhEszePurchase: SKProductsRequestDelegate {
   func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
     products = response.products
   }
 }
 
-extension DpcyDvfCnfmPurchaseManager: SKPaymentTransactionObserver {
+extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
   func paymentQueue(
     _ queue: SKPaymentQueue,
     updatedTransactions transactions: [SKPaymentTransaction]

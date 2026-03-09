@@ -23,10 +23,10 @@ enum WwaQhwoEkuMainRoute: Hashable {
   case jdnOjgXcyyEdit
   case ungBsrTqiqSetting
   case zowFpvnJooAgree(url: URL)
-  case ppunNilIimOther(userEntity: WsctDlnKessUser)
-  case lqgtUhmUcrCall(userEntity: WsctDlnKessUser)
+  case ppunNilIimOther(userEntity: UserModel)
+  case lqgtUhmUcrCall(userEntity: UserModel)
   case rqqiRliYicMessage
-  case bianYuvZkynChat(userEntity: WsctDlnKessUser, chatID: String)
+  case bianYuvZkynChat(userEntity: UserModel, chatID: String)
   case sfadOeagKmoReport
   case cbhOgauAztzFans
   case axxCziiIktuFollow

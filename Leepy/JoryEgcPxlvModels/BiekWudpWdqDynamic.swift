@@ -110,3 +110,50 @@ extension DynamicModel {
     )
   }
 }
+struct DynamicDTO: Codable {
+
+  /// 帖子ID
+  let dynamicId: String
+
+  /// 发布人ID
+  let userId: String
+
+  /// 帖子类型（0=图片，1=视频）
+  let dynamicType: Int
+
+  /// 帖子描述
+  let dynamicDesc: String
+
+  /// 图片帖子类型下标
+  let dynamicTitleType: Int
+
+  /// 图片地址
+  let dynamicPic: [String]
+
+  /// 视频地址
+  let dynamicVideo: String
+
+  /// 点赞数
+  let dynamicLikeCount: Int
+
+  /// 评论数
+  let dynamicCommentCount: Int
+}
+
+extension DynamicDTO {
+
+  func toModel() -> DynamicModel {
+    DynamicModel(
+      dynamicId: dynamicId,
+      userId: userId,
+      dynamicType: dynamicType,
+      dynamicDesc: dynamicDesc,
+      dynamicTitleType: dynamicTitleType,
+      dynamicPic: dynamicPic,
+      dynamicVideo: dynamicVideo,
+      dynamicLikeCount: dynamicLikeCount,
+      dynamicCommentCount: dynamicCommentCount
+    )
+  }
+
+}

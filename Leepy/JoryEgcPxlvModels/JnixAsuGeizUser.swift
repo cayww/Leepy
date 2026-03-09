@@ -170,3 +170,41 @@ extension UserModel {
     try context.save()
   }
 }
+
+struct UserDTO: Codable {
+
+  let userId: String
+  let email: String
+  let password: String
+  let avator: String
+  let name: String
+  let about: String
+  let coins: Int
+
+  let follow: [String]
+  let fans: [String]
+  let blockList: [String]
+  let picPostLikeIds: [String]
+  let videoPostLikeIds: [String]
+}
+
+extension UserDTO {
+
+  func toModel() -> UserModel {
+    return UserModel(
+      userId: userId,
+      email: email,
+      password: password,
+      avator: avator,
+      name: name,
+      about: about,
+      coins: coins,
+      follow: follow,
+      fans: fans,
+      blockList: blockList,
+      picPostLikeIds: picPostLikeIds,
+      videoPostLikeIds: videoPostLikeIds
+    )
+  }
+
+}

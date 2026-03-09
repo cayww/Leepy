@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct LwprZdcRfqfSplash: View {
-  @EnvironmentObject var appState: DhutRpbaJgwState
-  @EnvironmentObject var purchaseManager: DpcyDvfCnfmPurchaseManager
+  @EnvironmentObject var appState: RlbHdbTvacState
+  @EnvironmentObject var purchaseManager: VvolHdqhEszePurchase
   var body: some View {
     GeometryReader { _ in
       Image("Assets/leepy_splash_bg").resizable().scaledToFill().ignoresSafeArea()

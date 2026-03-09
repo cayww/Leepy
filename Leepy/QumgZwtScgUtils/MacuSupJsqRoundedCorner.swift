@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RoundedCorner: Shape {
+struct MacuSupJsqRoundedCorner: Shape {
   var radius: CGFloat
   var corners: UIRectCorner
 
