@@ -38,9 +38,9 @@ struct YwxKvvRbdkGuide: View {
           Text("Login by email")
             .foregroundColor(Color("text1"))
             .font(.system(size: 20.sp, weight: .bold))
+            .frame(height: 62.h)
+            .frame(maxWidth: .infinity)
         }
-        .frame(height: 62.h)
-        .frame(maxWidth: .infinity)
         .background(
           Rectangle()
             .fill(
@@ -56,6 +56,68 @@ struct YwxKvvRbdkGuide: View {
         )
         .cornerRadius(40)
         .padding(.horizontal, 73.w)
+        Spacer().frame(height: 20.h)
+        Button(action: {
+
+        }) {
+          Text("I'm new")
+            .foregroundColor(.white)
+            .font(.system(size: 20.sp, weight: .bold))
+            .frame(height: 62.h)
+            .frame(maxWidth: .infinity)
+        }
+        .background(
+          Rectangle()
+            .fill(.black)
+            .overlay(
+              RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.clear)
+                .shadow(color: Color.white.opacity(0.6), radius: 2, x: -2, y: -2)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            )
+            .overlay(
+              RoundedRectangle(cornerRadius: 12)
+                .stroke(Color.clear)
+                .shadow(color: Color.white.opacity(0.5), radius: 2, x: 2, y: 2)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            )
+        )
+        .cornerRadius(40)
+        .padding(.horizontal, 73.w)
+        Spacer().frame(height: 22.h)
+        HStack(spacing: 0) {
+          Text("Don't have an account? ")
+            .foregroundColor(.white)
+            .font(.system(size: 14.sp))
+          Text("Sign up")
+            .foregroundColor(.white)
+            .font(.system(size: 14.sp, weight: .bold))
+            .underline()
+        }
+        Spacer().frame(height: 68.h)
+        HStack {
+          Image("Assets/leepy_guide_checked")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 19.r, height: 19.r)
+          HStack(spacing: 0) {
+            Text("Agree with  ")
+              .foregroundColor(.white)
+              .font(.system(size: 14.sp))
+            Text("User Agreement")
+              .foregroundColor(.white)
+              .font(.system(size: 14.sp))
+              .underline()
+            Text(" and ")
+              .foregroundColor(.white)
+              .font(.system(size: 14.sp))
+            Text("Privacy Policy")
+              .foregroundColor(.white)
+              .font(.system(size: 14.sp))
+              .underline()
+          }
+        }
+        .padding(.bottom, 1.h)
       }
     }
     .enableInjection()
