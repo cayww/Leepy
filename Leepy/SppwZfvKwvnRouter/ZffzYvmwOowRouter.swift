@@ -6,6 +6,7 @@ enum WwaQhwoEkuPhase: Hashable {
   case asqLicvGlkGuide
   case vzxtUcsAkqqMain
 }
+
 enum WwaQhwoEkuRoute: Hashable {
   case asqLicvGlkGuide
   case zowFpvnJooAgree(url: URL)
@@ -14,25 +15,25 @@ enum WwaQhwoEkuRoute: Hashable {
 }
 
 enum WwaQhwoEkuMainRoute: Hashable {
-  case namgIsyRuiStyle
-  case xduVfjOzuWallet
-  case vwkPnuTjAiImage
-  case ekgUxutJzHistory
-  case redCfmDzAiResult(partyStyle: Int, gender: Int)
-  case inuUdwaEfrfProfile
-  case jdnOjgXcyyEdit
-  case ungBsrTqiqSetting
-  case zowFpvnJooAgree(url: URL)
-  case ppunNilIimOther(userEntity: UserModel)
-  case lqgtUhmUcrCall(userEntity: UserModel)
-  case rqqiRliYicMessage
-  case bianYuvZkynChat(userEntity: UserModel, chatID: String)
-  case sfadOeagKmoReport
-  case cbhOgauAztzFans
-  case axxCziiIktuFollow
-  case nihxYoupWyepBlock
+  // case namgIsyRuiStyle
+  // case xduVfjOzuWallet
+  // case vwkPnuTjAiImage
+  // case ekgUxutJzHistory
+  // case redCfmDzAiResult(partyStyle: Int, gender: Int)
+  // case inuUdwaEfrfProfile
+  // case jdnOjgXcyyEdit
+  // case ungBsrTqiqSetting
+  // case zowFpvnJooAgree(url: URL)
+  // case ppunNilIimOther(userEntity: UserModel)
+  // case lqgtUhmUcrCall(userEntity: UserModel)
+  // case rqqiRliYicMessage
+  // case bianYuvZkynChat(userEntity: UserModel, chatID: String)
+  // case sfadOeagKmoReport
+  // case cbhOgauAztzFans
+  // case axxCziiIktuFollow
+  // case nihxYoupWyepBlock
 }
 
-class WwaQhwoEkuRouter: ObservableObject {
-  @Published var qmzjFtvKuhPath = NavigationPath()
+class SvcdXfvTsxRouter: ObservableObject {
+  @Published var leepyPath = NavigationPath()
 }
