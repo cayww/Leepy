@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 struct YwxKvvRbdkGuide: View {
@@ -73,14 +74,56 @@ struct YwxKvvRbdkGuide: View {
           .padding(.horizontal, 73.w)
           Spacer().frame(height: 20.h)
           Button(action: {
-
+            guard !isLoading else { return }
+            guard isAgreeEula else {
+              isShowEula = true
+              return
+            }
+            let email = "vtfrvbdvtr@gmail.com"
+            let newUser = UserModel(
+              userId: "u99",
+              email: email,
+              password: "123456789",
+              avatar:
+                "http://huanniuchat.oss-ap-northeast-1.aliyuncs.com/leepy/leepy_default_photo.png",
+              name: "User6516",
+              about: "Nothing",
+              coins: 0
+            )
+            Task {
+              await MainActor.run { isLoading = true }
+              defer { isLoading = false }
+              do {
+                try await Task.sleep(for: .milliseconds(518))
+                let descriptor = FetchDescriptor<UserModel>(
+                  predicate: #Predicate { $0.email == email }
+                )
+                let user = try modelContext.fetch(descriptor).first
+                await MainActor.run {
+                  if let user = user {
+                    appState.wfzqCubCpmUser = user
+                  } else {
+                    modelContext.insert(newUser)
+                    appState.wfzqCubCpmUser = newUser
+                  }
+                  appState.vkyeFxuEaaPhase = .vzxtUcsAkqqMain
+                }
+              } catch {
+              }
+            }
           }) {
-            Text("I'm new")
-              .foregroundColor(.white)
-              .font(.system(size: 20.sp, weight: .bold))
-              .frame(height: 62.h)
-              .frame(maxWidth: .infinity)
+            if isLoading {
+              ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .frame(maxWidth: .infinity)
+            } else {
+              Text("I'm new")
+                .foregroundColor(.white)
+                .font(.system(size: 20.sp, weight: .bold))
+                .frame(maxWidth: .infinity)
+            }
           }
+          .frame(height: 62.h)
           .background(
             Rectangle()
               .fill(.black)
@@ -133,6 +176,11 @@ struct YwxKvvRbdkGuide: View {
                 .foregroundColor(.white)
                 .font(.system(size: 14.sp))
                 .underline()
+                .onTapGesture {
+                  router.leepyPath.append(
+                    WwaQhwoEkuRoute.zowFpvnJooAgree(
+                      url: URL(string: "https://app.clhpy7fu.link/users")!))
+                }
               Text(" and ")
                 .foregroundColor(.white)
                 .font(.system(size: 14.sp))
@@ -140,6 +188,11 @@ struct YwxKvvRbdkGuide: View {
                 .foregroundColor(.white)
                 .font(.system(size: 14.sp))
                 .underline()
+                .onTapGesture {
+                  router.leepyPath.append(
+                    WwaQhwoEkuRoute.zowFpvnJooAgree(
+                      url: URL(string: "https://app.clhpy7fu.link/privacy")!))
+                }
             }
           }
           .padding(.bottom, 1.h)

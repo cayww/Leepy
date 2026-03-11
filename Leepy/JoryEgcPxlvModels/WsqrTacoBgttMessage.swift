@@ -21,7 +21,7 @@ final class MessageModel {
   var name: String?
 
   /// 头像
-  var avator: String?
+  var avatar: String?
 
   /// 消息位置（left/right）
   var position: String?
@@ -41,7 +41,7 @@ final class MessageModel {
     chatId: String,
     userId: String,
     name: String? = nil,
-    avator: String? = nil,
+    avatar: String? = nil,
     position: String? = nil,
     sendContent: String,
     sendPicUrl: String,
@@ -52,7 +52,7 @@ final class MessageModel {
     self.chatId = chatId
     self.userId = userId
     self.name = name
-    self.avator = avator
+    self.avatar = avatar
     self.position = position
     self.sendContent = sendContent
     self.sendPicUrl = sendPicUrl
@@ -71,7 +71,7 @@ extension MessageModel {
       "chatId": chatId,
       "userId": userId,
       "name": name as Any,
-      "avator": avator as Any,
+      "avatar": avatar as Any,
       "position": position as Any,
       "sendContent": sendContent,
       "sendPicUrl": sendPicUrl,
@@ -105,7 +105,7 @@ extension MessageModel {
       chatId: chatId,
       userId: userId,
       name: json["name"] as? String,
-      avator: json["avator"] as? String,
+      avatar: json["avatar"] as? String,
       position: json["position"] as? String,
       sendContent: sendContent,
       sendPicUrl: sendPicUrl,

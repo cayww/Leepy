@@ -23,7 +23,8 @@ enum WwaQhwoEkuMainRoute: Hashable {
   // case inuUdwaEfrfProfile
   // case jdnOjgXcyyEdit
   // case ungBsrTqiqSetting
-  // case zowFpvnJooAgree(url: URL)
+  case zowFpvnJooAgree(url: URL)
+  case wfueZroFsmnPrimary(url: URL)
   // case ppunNilIimOther(userEntity: UserModel)
   // case lqgtUhmUcrCall(userEntity: UserModel)
   // case rqqiRliYicMessage

@@ -9,7 +9,7 @@ final class UserModel {
 
   var email: String
   var password: String
-  var avator: String
+  var avatar: String
   var name: String
   var about: String
   var coins: Int
@@ -24,7 +24,7 @@ final class UserModel {
     userId: String,
     email: String,
     password: String,
-    avator: String,
+    avatar: String,
     name: String,
     about: String,
     coins: Int,
@@ -37,7 +37,7 @@ final class UserModel {
     self.userId = userId
     self.email = email
     self.password = password
-    self.avator = avator
+    self.avatar = avatar
     self.name = name
     self.about = about
     self.coins = coins
@@ -57,7 +57,7 @@ extension UserModel {
       "userId": userId,
       "email": email,
       "password": password,
-      "avator": avator,
+      "avatar": avatar,
       "name": name,
       "about": about,
       "coins": coins,
@@ -81,7 +81,7 @@ extension UserModel {
       let userId = json["userId"] as? String,
       let email = json["email"] as? String,
       let password = json["password"] as? String,
-      let avator = json["avator"] as? String,
+      let avatar = json["avatar"] as? String,
       let name = json["name"] as? String,
       let about = json["about"] as? String,
       let coins = json["coins"] as? Int
@@ -91,7 +91,7 @@ extension UserModel {
       userId: userId,
       email: email,
       password: password,
-      avator: avator,
+      avatar: avatar,
       name: name,
       about: about,
       coins: coins,
@@ -110,7 +110,7 @@ extension UserModel {
   func copyWith(
     email: String? = nil,
     password: String? = nil,
-    avator: String? = nil,
+    avatar: String? = nil,
     name: String? = nil,
     about: String? = nil,
     coins: Int? = nil,
@@ -125,7 +125,7 @@ extension UserModel {
       userId: userId,
       email: email ?? self.email,
       password: password ?? self.password,
-      avator: avator ?? self.avator,
+      avatar: avatar ?? self.avatar,
       name: name ?? self.name,
       about: about ?? self.about,
       coins: coins ?? self.coins,
@@ -144,7 +144,7 @@ extension UserModel {
     context: ModelContext,
     email: String? = nil,
     password: String? = nil,
-    avator: String? = nil,
+    avatar: String? = nil,
     name: String? = nil,
     about: String? = nil,
     coins: Int? = nil,
@@ -157,7 +157,7 @@ extension UserModel {
 
     self.email = email ?? self.email
     self.password = password ?? self.password
-    self.avator = avator ?? self.avator
+    self.avatar = avatar ?? self.avatar
     self.name = name ?? self.name
     self.about = about ?? self.about
     self.coins = coins ?? self.coins
@@ -176,7 +176,7 @@ struct UserDTO: Codable {
   let userId: String
   let email: String
   let password: String
-  let avator: String
+  let avatar: String
   let name: String
   let about: String
   let coins: Int
@@ -195,7 +195,7 @@ extension UserDTO {
       userId: userId,
       email: email,
       password: password,
-      avator: avator,
+      avatar: avatar,
       name: name,
       about: about,
       coins: coins,
