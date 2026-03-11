@@ -37,11 +37,18 @@ struct YwxKvvRbdkGuide: View {
               .padding(.vertical, 6.5.h)
               .background(.white)
               .cornerRadius(10)
+              .onTapGesture {
+                isShowEula = true
+              }
           }
           .padding(.horizontal, 20.w)
           Spacer()
           Button(action: {
-
+            if isAgreeEula {
+              router.leepyPath.append(WwaQhwoEkuRoute.gingFfkFidqLogin)
+            } else {
+              isShowEula = true
+            }
           }) {
             Text("Login by email")
               .foregroundColor(Color("text1"))
@@ -101,6 +108,13 @@ struct YwxKvvRbdkGuide: View {
               .foregroundColor(.white)
               .font(.system(size: 14.sp, weight: .bold))
               .underline()
+              .onTapGesture {
+                if isAgreeEula {
+                  router.leepyPath.append(WwaQhwoEkuRoute.vccMliWsyRegister)
+                } else {
+                  isShowEula = true
+                }
+              }
           }
           Spacer().frame(height: 68.h)
           HStack {
@@ -129,6 +143,11 @@ struct YwxKvvRbdkGuide: View {
             }
           }
           .padding(.bottom, 1.h)
+        }
+      }
+      .overlay {
+        if isShowEula {
+          QngkUgjVaosEula(isAgreeEula: $isAgreeEula, isShowEula: $isShowEula)
         }
       }
       .navigationDestination(for: WwaQhwoEkuRoute.self) { route in
