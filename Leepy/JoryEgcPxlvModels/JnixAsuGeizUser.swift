@@ -49,7 +49,6 @@ final class UserModel {
   }
 }
 
-// MARK: - JSON
 extension UserModel {
 
   func toJson() -> [String: Any] {
@@ -101,73 +100,6 @@ extension UserModel {
       picPostLikeIds: json["picPostLikeIds"] as? [String] ?? [],
       videoPostLikeIds: json["videoPostLikeIds"] as? [String] ?? []
     )
-  }
-}
-
-// MARK: - Copy
-extension UserModel {
-
-  func copyWith(
-    email: String? = nil,
-    password: String? = nil,
-    avatar: String? = nil,
-    name: String? = nil,
-    about: String? = nil,
-    coins: Int? = nil,
-    follow: [String]? = nil,
-    fans: [String]? = nil,
-    blockList: [String]? = nil,
-    picPostLikeIds: [String]? = nil,
-    videoPostLikeIds: [String]? = nil
-  ) -> UserModel {
-
-    return UserModel(
-      userId: userId,
-      email: email ?? self.email,
-      password: password ?? self.password,
-      avatar: avatar ?? self.avatar,
-      name: name ?? self.name,
-      about: about ?? self.about,
-      coins: coins ?? self.coins,
-      follow: follow ?? self.follow,
-      fans: fans ?? self.fans,
-      blockList: blockList ?? self.blockList,
-      picPostLikeIds: picPostLikeIds ?? self.picPostLikeIds,
-      videoPostLikeIds: videoPostLikeIds ?? self.videoPostLikeIds
-    )
-  }
-}
-
-extension UserModel {
-
-  func updateUser(
-    context: ModelContext,
-    email: String? = nil,
-    password: String? = nil,
-    avatar: String? = nil,
-    name: String? = nil,
-    about: String? = nil,
-    coins: Int? = nil,
-    follow: [String]? = nil,
-    fans: [String]? = nil,
-    blockList: [String]? = nil,
-    picPostLikeIds: [String]? = nil,
-    videoPostLikeIds: [String]? = nil
-  ) throws {
-
-    self.email = email ?? self.email
-    self.password = password ?? self.password
-    self.avatar = avatar ?? self.avatar
-    self.name = name ?? self.name
-    self.about = about ?? self.about
-    self.coins = coins ?? self.coins
-    self.follow = follow ?? self.follow
-    self.fans = fans ?? self.fans
-    self.blockList = blockList ?? self.blockList
-    self.picPostLikeIds = picPostLikeIds ?? self.picPostLikeIds
-    self.videoPostLikeIds = videoPostLikeIds ?? self.videoPostLikeIds
-
-    try context.save()
   }
 }
 
