@@ -31,7 +31,12 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
 
     let configuration: WKWebViewConfiguration = WKWebViewConfiguration()
     configuration.defaultWebpagePreferences = preferences
-
+    configuration.allowsInlineMediaPlayback = true
+    configuration.allowsAirPlayForMediaPlayback = false
+    configuration.allowsPictureInPictureMediaPlayback = false
+    if #available(iOS 10.0, *) {
+      configuration.mediaTypesRequiringUserActionForPlayback = []
+    }
     // JS handler
     let userController = WKUserContentController()
 
@@ -181,7 +186,9 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
           }
         }
       case JsHandlers.close:
-        router.leepyPath.removeLast()
+        if router.leepyPath.count > 0 {
+          router.leepyPath.removeLast()
+        }
       case JsHandlers.updateUser:
         guard let rawList = message.body as? [[String: Any]] else { return }
         for json in rawList {
@@ -210,13 +217,20 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
       case JsHandlers.updatePost:
         guard let rawList: [[String: Any]] = message.body as? [[String: Any]] else { return }
         for json in rawList {
-          guard let newDynamic = DynamicModel.fromJson(json) else { continue }
+          guard let newDynamic = DynamicModel.fromJson(json, modelContext: modelContext) else {
+            continue
+          }
           let dynamicId = newDynamic.dynamicId
           let descriptor = FetchDescriptor<DynamicModel>(
             predicate: #Predicate { $0.dynamicId == dynamicId }
           )
           if let existing: DynamicModel = try? modelContext.fetch(descriptor).first {
-            existing.userId = newDynamic.userId
+            if let userId = json["userId"] as? String {
+              let userDescriptor = FetchDescriptor<UserModel>(
+                predicate: #Predicate { $0.userId == userId }
+              )
+              existing.user = try? modelContext.fetch(userDescriptor).first
+            }
             existing.dynamicType = newDynamic.dynamicType
             existing.dynamicDesc = newDynamic.dynamicDesc
             existing.dynamicTitleType = newDynamic.dynamicTitleType
@@ -225,6 +239,12 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
             existing.dynamicLikeCount = newDynamic.dynamicLikeCount
             existing.dynamicCommentCount = newDynamic.dynamicCommentCount
           } else {
+            if let userId = json["userId"] as? String {
+              let userDescriptor = FetchDescriptor<UserModel>(
+                predicate: #Predicate { $0.userId == userId }
+              )
+              newDynamic.user = try? modelContext.fetch(userDescriptor).first
+            }
             modelContext.insert(newDynamic)
           }
         }

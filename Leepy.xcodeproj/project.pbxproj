@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD010D262F63DDE40088A99A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DD010D252F63DDE40088A99A /* Kingfisher */; };
 		DD8531B22F5EA2B0007C0EA0 /* HotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD010D262F63DDE40088A99A /* Kingfisher in Frameworks */,
 				DD8531B22F5EA2B0007C0EA0 /* HotSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +87,7 @@
 			name = Leepy;
 			packageProductDependencies = (
 				DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */,
+				DD010D252F63DDE40088A99A /* Kingfisher */,
 			);
 			productName = Leepy;
 			productReference = DDD32ABC2F5E738800337CDC /* Leepy.app */;
@@ -116,6 +119,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
+				DD010D242F63DDE40088A99A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DDD32ABD2F5E738800337CDC /* Products */;
@@ -406,6 +410,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DD010D242F63DDE40088A99A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.8.0;
+			};
+		};
 		DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/johnno1962/HotSwiftUI.git";
@@ -417,6 +429,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DD010D252F63DDE40088A99A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD010D242F63DDE40088A99A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */;

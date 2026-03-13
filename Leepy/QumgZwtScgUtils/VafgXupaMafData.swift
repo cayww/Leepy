@@ -23,7 +23,7 @@ func bootstrapData(context: ModelContext) throws {
   let dynamicDTOs = try decoder.decode([DynamicDTO].self, from: dynamicsData)
 
   for dto in dynamicDTOs {
-    context.insert(dto.toModel())
+    context.insert(dto.toModel(modelContext: context))
   }
 
   try context.save()

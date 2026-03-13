@@ -8,6 +8,13 @@ struct LeepyApp: App {
   @StateObject private var appState = RlbHdbTvacState()
   @StateObject private var purchaseManager = VvolHdqhEszePurchase()
   init() {
+    let appearance = UITabBarAppearance()
+    appearance.configureWithTransparentBackground()
+    appearance.backgroundEffect = nil
+    appearance.backgroundColor = .clear
+    UITabBar.appearance().backgroundColor = .clear
+    UITabBar.appearance().standardAppearance = appearance
+    UITabBar.appearance().scrollEdgeAppearance = appearance
     #if DEBUG
       Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
       if let path = Bundle.main.path(

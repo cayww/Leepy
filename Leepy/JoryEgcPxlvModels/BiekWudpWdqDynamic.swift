@@ -8,8 +8,9 @@ final class DynamicModel {
   @Attribute(.unique)
   var dynamicId: String
 
-  /// 发布人ID
-  var userId: String
+  /// 关联用户
+  @Relationship(deleteRule: .cascade)
+  var user: UserModel?
 
   /// 帖子类型（0=图片，1=视频）
   var dynamicType: Int
@@ -34,7 +35,7 @@ final class DynamicModel {
 
   init(
     dynamicId: String,
-    userId: String,
+    user: UserModel?,
     dynamicType: Int,
     dynamicDesc: String,
     dynamicTitleType: Int,
@@ -44,7 +45,7 @@ final class DynamicModel {
     dynamicCommentCount: Int
   ) {
     self.dynamicId = dynamicId
-    self.userId = userId
+    self.user = user
     self.dynamicType = dynamicType
     self.dynamicDesc = dynamicDesc
     self.dynamicTitleType = dynamicTitleType
@@ -62,7 +63,7 @@ extension DynamicModel {
   func toJson() -> [String: Any] {
     return [
       "dynamicId": dynamicId,
-      "userId": userId,
+      "userId": user?.userId ?? "",
       "dynamicType": dynamicType,
       "dynamicDesc": dynamicDesc,
       "dynamicTitleType": dynamicTitleType,
@@ -81,8 +82,12 @@ extension DynamicModel {
     return String(data: data, encoding: .utf8)
   }
 
-  /// 从 JSON 创建对象
-  static func fromJson(_ json: [String: Any]) -> DynamicModel? {
+  /// 从 JSON 创建对象，并关联 UserModel
+  static func fromJson(
+    _ json: [String: Any],
+    modelContext: ModelContext
+  ) -> DynamicModel? {
+
     guard
       let dynamicId = json["dynamicId"] as? String,
       let userId = json["userId"] as? String,
@@ -97,9 +102,15 @@ extension DynamicModel {
       return nil
     }
 
+    // 查询关联用户
+    let userDescriptor = FetchDescriptor<UserModel>(
+      predicate: #Predicate { $0.userId == userId }
+    )
+    let user = try? modelContext.fetch(userDescriptor).first
+
     return DynamicModel(
       dynamicId: dynamicId,
-      userId: userId,
+      user: user,
       dynamicType: dynamicType,
       dynamicDesc: dynamicDesc,
       dynamicTitleType: dynamicTitleType,
@@ -142,10 +153,17 @@ struct DynamicDTO: Codable {
 
 extension DynamicDTO {
 
-  func toModel() -> DynamicModel {
-    DynamicModel(
+  /// DTO 转 Model，并关联 UserModel
+  func toModel(modelContext: ModelContext) -> DynamicModel {
+    // 查询对应用户
+    let userDescriptor = FetchDescriptor<UserModel>(
+      predicate: #Predicate { $0.userId == self.userId }
+    )
+    let user: UserModel? = try? modelContext.fetch(userDescriptor).first
+
+    return DynamicModel(
       dynamicId: dynamicId,
-      userId: userId,
+      user: user,
       dynamicType: dynamicType,
       dynamicDesc: dynamicDesc,
       dynamicTitleType: dynamicTitleType,
@@ -155,5 +173,4 @@ extension DynamicDTO {
       dynamicCommentCount: dynamicCommentCount
     )
   }
-
 }
