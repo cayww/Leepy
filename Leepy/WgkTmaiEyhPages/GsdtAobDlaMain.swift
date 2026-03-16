@@ -94,7 +94,12 @@ struct GsdtAobDlaMain: View {
                 width: 46.r, height: 46.r
               )
               .onTapGesture {
-
+                router.leepyPath.append(
+                  WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                    url: URL(
+                      string:
+                        "http://192.168.9.129:2025/send-dynamic")!
+                  ))
               }
               .offset(y: -31.r)
           }

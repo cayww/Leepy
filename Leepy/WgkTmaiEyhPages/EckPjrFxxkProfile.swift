@@ -11,11 +11,8 @@ struct EckPjrFxxkProfile: View {
   @EnvironmentObject var router: SvcdXfvTsxRouter
   @Query private var dynamics: [DynamicModel]
   var filteredVideoDynamics: [DynamicModel] {
-    guard let blockList = appState.wfzqCubCpmUser?.blockList else {
-      return dynamics.filter { $0.dynamicType == 1 }
-    }
     return dynamics.filter {
-      !blockList.contains($0.user?.userId ?? "") && $0.dynamicType == 1
+      $0.dynamicType == 1
         && $0.user?.userId == appState.wfzqCubCpmUser?.userId
     }
   }
@@ -33,13 +30,31 @@ struct EckPjrFxxkProfile: View {
             .resizable()
             .scaledToFit()
             .frame(
-              width: 24.r, height: 24.r)
+              width: 24.r, height: 24.r
+            )
+            .onTapGesture {
+              router.leepyPath.append(
+                WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                  url: URL(
+                    string:
+                      "http://192.168.9.129:2025/gold-coin")!
+                ))
+            }
           Spacer().frame(width: 17.w)
           Image("Assets/leepy_setting_icon")
             .resizable()
             .scaledToFit()
             .frame(
-              width: 24.r, height: 24.r)
+              width: 24.r, height: 24.r
+            )
+            .onTapGesture {
+              router.leepyPath.append(
+                WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                  url: URL(
+                    string:
+                      "http://192.168.9.129:2025/setup-page")!
+                ))
+            }
         }
         .padding(.horizontal, 20.w)
         HStack(spacing: 12.w) {
@@ -59,7 +74,16 @@ struct EckPjrFxxkProfile: View {
                 .foregroundColor(Color("text1"))
                 .font(.system(size: 20.sp, weight: .bold))
               Image("Assets/leepy_edit_icon").resizable().scaledToFit().frame(
-                width: 24.r, height: 24.r)
+                width: 24.r, height: 24.r
+              )
+              .onTapGesture {
+                router.leepyPath.append(
+                  WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                    url: URL(
+                      string:
+                        "http://192.168.9.129:2025/edit-info")!
+                  ))
+              }
             }
             Spacer().frame(height: 6.h)
             Text(appState.wfzqCubCpmUser?.about ?? "").foregroundColor(Color("text3"))
@@ -90,7 +114,7 @@ struct EckPjrFxxkProfile: View {
           Spacer()
           VStack(spacing: 8.h) {
             Text(
-              "\(appState.wfzqCubCpmUser?.follow.count ?? 0)"
+              "\(appState.wfzqCubCpmUser?.fans.count ?? 0)"
             )
             .foregroundColor(
               Color("text1")
@@ -102,6 +126,14 @@ struct EckPjrFxxkProfile: View {
               Color("text2")
             )
             .font(.system(size: 16.sp))
+          }
+          .onTapGesture {
+            router.leepyPath.append(
+              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                url: URL(
+                  string:
+                    "http://192.168.9.129:2025/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")")!
+              ))
           }
           Spacer()
           VStack(spacing: 8.h) {
@@ -118,6 +150,14 @@ struct EckPjrFxxkProfile: View {
               Color("text2")
             )
             .font(.system(size: 16.sp))
+          }
+          .onTapGesture {
+            router.leepyPath.append(
+              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                url: URL(
+                  string:
+                    "http://192.168.9.129:2025/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")")!
+              ))
           }
         }
         .padding(.horizontal, 30.w)

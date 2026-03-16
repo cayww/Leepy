@@ -48,6 +48,15 @@ struct KwcJszQyjMessage: View {
               )
               .cornerRadius(40.r)
           }
+          .onTapGesture {
+            router.leepyPath.append(
+              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                url: URL(
+                  string:
+                    "http://192.168.9.129:2025/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
+                )!
+              ))
+          }
           Spacer()
           VStack(spacing: 10.h) {
             Image("Assets/leepy_msg_following")
@@ -66,6 +75,15 @@ struct KwcJszQyjMessage: View {
                   .stroke(.black.opacity(1), lineWidth: 1)
               )
               .cornerRadius(40.r)
+          }
+          .onTapGesture {
+            router.leepyPath.append(
+              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                url: URL(
+                  string:
+                    "http://192.168.9.129:2025/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
+                )!
+              ))
           }
           Spacer()
           VStack(spacing: 10.h) {
@@ -138,11 +156,22 @@ struct KwcJszQyjMessage: View {
                   Text(chat.lastSendTime ?? "")
                     .foregroundColor(Color("text3"))
                     .font(.system(size: 10.sp))
-                    .offset(x: -16.w, y: 10.h), alignment: .topTrailing)
+                    .offset(x: -16.w, y: 10.h), alignment: .topTrailing
+                )
+                .onTapGesture {
+                  router.leepyPath.append(
+                    WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                      url: URL(
+                        string:
+                          "http://192.168.9.129:2025/private-chat?id=\(chat.chatId)"
+                      )!
+                    ))
+                }
               }
             }
           }
         }
+        .padding(.horizontal, 20.w)
         .scrollIndicators(.hidden)
       }
     }

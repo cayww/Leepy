@@ -102,7 +102,16 @@ struct PprqKumkZetHome: View {
         .overlay(
           Image("Assets/leepy_main_ai_rw").resizable().scaledToFit().frame(
             width: 87.w, height: 125.h
-          ).offset(x: -51.w), alignment: .bottomTrailing)
+          ).offset(x: -51.w), alignment: .bottomTrailing
+        )
+        .onTapGesture {
+          router.leepyPath.append(
+            WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+              url: URL(
+                string:
+                  "http://192.168.9.129:2025/chat-view")!
+            ))
+        }
         Spacer().frame(height: 20.h)
         Text("Pop Look")
           .foregroundColor(Color("text1"))

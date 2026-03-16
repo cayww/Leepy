@@ -61,6 +61,14 @@ struct IrlvCtgVhhFound: View {
           Spacer()
           Image("Assets/leepy_video_post_add")
             .resizable().scaledToFit().frame(width: 40.r, height: 40.r)
+            .onTapGesture {
+              router.leepyPath.append(
+                WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                  url: URL(
+                    string:
+                      "http://192.168.9.129:2025/publish-video")!
+                ))
+            }
         }.padding(.horizontal, 20.w)
         Spacer().frame(height: 25.h)
         TabView(selection: $selectedTab) {

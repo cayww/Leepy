@@ -225,12 +225,6 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
             predicate: #Predicate { $0.dynamicId == dynamicId }
           )
           if let existing: DynamicModel = try? modelContext.fetch(descriptor).first {
-            if let userId = json["userId"] as? String {
-              let userDescriptor = FetchDescriptor<UserModel>(
-                predicate: #Predicate { $0.userId == userId }
-              )
-              existing.user = try? modelContext.fetch(userDescriptor).first
-            }
             existing.dynamicType = newDynamic.dynamicType
             existing.dynamicDesc = newDynamic.dynamicDesc
             existing.dynamicTitleType = newDynamic.dynamicTitleType
@@ -239,18 +233,11 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
             existing.dynamicLikeCount = newDynamic.dynamicLikeCount
             existing.dynamicCommentCount = newDynamic.dynamicCommentCount
           } else {
-            if let userId = json["userId"] as? String {
-              let userDescriptor = FetchDescriptor<UserModel>(
-                predicate: #Predicate { $0.userId == userId }
-              )
-              newDynamic.user = try? modelContext.fetch(userDescriptor).first
-            }
             modelContext.insert(newDynamic)
           }
         }
         try? modelContext.save()
       case JsHandlers.updateComment:
-        print(message.body)
         guard let rawList = message.body as? [[String: Any]] else { return }
         for json in rawList {
           guard let newComment = CommentModel.fromJson(json) else { continue }
@@ -269,7 +256,7 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
         try? modelContext.save()
       case JsHandlers.uploadChat:
 
-        guard let rawList = message.body as? [[String: Any]] else { return }
+        guard let rawList: [[String: Any]] = message.body as? [[String: Any]] else { return }
 
         for json in rawList {
 
