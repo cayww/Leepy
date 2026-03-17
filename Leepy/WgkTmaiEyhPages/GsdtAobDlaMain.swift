@@ -32,6 +32,9 @@ struct GsdtAobDlaMain: View {
         EckPjrFxxkProfile()
           .tag(Tab.profile)
       }
+      .onAppear {
+        UITabBar.appearance().isHidden = true
+      }
       .navigationDestination(for: WwaQhwoEkuMainRoute.self) { route in
         switch route {
         case .wfueZroFsmnPrimary(let url):
@@ -84,7 +87,7 @@ struct GsdtAobDlaMain: View {
           .background(
             Image("Assets/leepy_tabbar_bg")
               .resizable()
-              .scaledToFit()
+              .scaledToFill()
           )
           .overlay(alignment: .top) {
             Image("Assets/leepy_add_post_icon")

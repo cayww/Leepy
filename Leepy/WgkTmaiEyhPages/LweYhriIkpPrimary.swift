@@ -364,20 +364,18 @@ struct LweYhriIkpPrimary: View {
   @EnvironmentObject var appState: RlbHdbTvacState
   var body: some View {
     GeometryReader { geo in
-      ZStack {
-        Image("Assets/leepy_splash_bg")
-          .resizable()
-          .scaledToFill()
-          .ignoresSafeArea()
-        LweYhriIkpPrimaryContent(
-          appState: appState,
-          trvudfhvSsxcUrl: trvudfhvSsxcUrl,
-          modelContext: modelContext,
-          router: router,
-          purchaseManager: purchaseManager
-        )
-        .edgesIgnoringSafeArea(.all)
-      }
+      Image("Assets/leepy_splash_bg")
+        .resizable()
+        .scaledToFill()
+        .ignoresSafeArea()
+      LweYhriIkpPrimaryContent(
+        appState: appState,
+        trvudfhvSsxcUrl: trvudfhvSsxcUrl,
+        modelContext: modelContext,
+        router: router,
+        purchaseManager: purchaseManager
+      )
+      .edgesIgnoringSafeArea(.all)
     }
     .navigationBarBackButtonHidden(true)
   }
