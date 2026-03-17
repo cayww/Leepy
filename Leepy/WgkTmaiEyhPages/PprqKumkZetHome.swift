@@ -70,7 +70,8 @@ struct PprqKumkZetHome: View {
                     WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
-                          "http://192.168.9.129:2025/article-detail?id=\(dynamicEntity.dynamicId)")!
+                          "https://spectacular-taiyaki-a6924e.netlify.app/article-detail?id=\(dynamicEntity.dynamicId)"
+                      )!
                     ))
                 }
             }
@@ -93,12 +94,12 @@ struct PprqKumkZetHome: View {
           Spacer()
           Image("Assets/leepy_ai_forward")
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
             .frame(width: 24.r, height: 24.r)
         }
         .padding(.horizontal, 13.w)
         .frame(width: 335.w, height: 95.h)
-        .background(Image("Assets/leepy_main_ai_bar").resizable().scaledToFit())
+        .background(Image("Assets/leepy_main_ai_bar").resizable().scaledToFill())
         .overlay(
           Image("Assets/leepy_main_ai_rw").resizable().scaledToFit().frame(
             width: 87.w, height: 125.h
@@ -109,7 +110,7 @@ struct PprqKumkZetHome: View {
             WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
               url: URL(
                 string:
-                  "http://192.168.9.129:2025/chat-view")!
+                  "https://spectacular-taiyaki-a6924e.netlify.app/chat-view")!
             ))
         }
         Spacer().frame(height: 20.h)
@@ -134,7 +135,7 @@ struct PprqKumkZetHome: View {
                       .stroke(Color.black, lineWidth: 1)
                   )
                   .overlay(
-                    Image("Assets/leepy_play_icon").resizable().scaledToFit().frame(
+                    Image("Assets/leepy_play_icon").resizable().scaledToFill().frame(
                       width: 20.r, height: 20.r), alignment: .center)
                 VStack(spacing: 0) {
                   HStack(spacing: 8.w) {
@@ -193,7 +194,8 @@ struct PprqKumkZetHome: View {
                   WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                     url: URL(
                       string:
-                        "http://192.168.9.129:2025/short-video?id=\(dynamicEntity.dynamicId)")!
+                        "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"
+                    )!
                   ))
               }
               .padding(.horizontal, 9.w)

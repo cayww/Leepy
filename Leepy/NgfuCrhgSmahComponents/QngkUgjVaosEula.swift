@@ -85,7 +85,7 @@ struct QngkUgjVaosEula: View {
       }
       .frame(width: 335.w, height: 611.h)
       .background(
-        Image("Assets/leepy_eula_bg").resizable().scaledToFit().ignoresSafeArea()
+        Image("Assets/leepy_eula_bg").resizable().scaledToFill().ignoresSafeArea()
       )
     }
   }

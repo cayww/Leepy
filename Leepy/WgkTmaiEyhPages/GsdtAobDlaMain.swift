@@ -98,7 +98,7 @@ struct GsdtAobDlaMain: View {
                   WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                     url: URL(
                       string:
-                        "http://192.168.9.129:2025/send-dynamic")!
+                        "https://spectacular-taiyaki-a6924e.netlify.app/send-dynamic")!
                   ))
               }
               .offset(y: -31.r)

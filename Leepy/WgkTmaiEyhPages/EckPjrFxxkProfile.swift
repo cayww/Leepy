@@ -37,22 +37,20 @@ struct EckPjrFxxkProfile: View {
                 WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                   url: URL(
                     string:
-                      "http://192.168.9.129:2025/gold-coin")!
+                      "https://spectacular-taiyaki-a6924e.netlify.app/gold-coin")!
                 ))
             }
           Spacer().frame(width: 17.w)
           Image("Assets/leepy_setting_icon")
             .resizable()
             .scaledToFit()
-            .frame(
-              width: 24.r, height: 24.r
-            )
+            .frame(width: 24.r, height: 24.r)
             .onTapGesture {
               router.leepyPath.append(
                 WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                   url: URL(
                     string:
-                      "http://192.168.9.129:2025/setup-page")!
+                      "https://spectacular-taiyaki-a6924e.netlify.app/setup-page")!
                 ))
             }
         }
@@ -81,7 +79,7 @@ struct EckPjrFxxkProfile: View {
                   WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                     url: URL(
                       string:
-                        "http://192.168.9.129:2025/edit-info")!
+                        "https://spectacular-taiyaki-a6924e.netlify.app/edit-info")!
                   ))
               }
             }
@@ -132,7 +130,8 @@ struct EckPjrFxxkProfile: View {
               WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
-                    "http://192.168.9.129:2025/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")")!
+                    "https://spectacular-taiyaki-a6924e.netlify.app/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
+                )!
               ))
           }
           Spacer()
@@ -156,7 +155,8 @@ struct EckPjrFxxkProfile: View {
               WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
-                    "http://192.168.9.129:2025/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")")!
+                    "https://spectacular-taiyaki-a6924e.netlify.app/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
+                )!
               ))
           }
         }
@@ -250,7 +250,8 @@ struct EckPjrFxxkProfile: View {
                   WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                     url: URL(
                       string:
-                        "http://192.168.9.129:2025/short-video?id=\(dynamicEntity.dynamicId)")!
+                        "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"
+                    )!
                   ))
               }
               .overlay(

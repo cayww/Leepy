@@ -66,7 +66,7 @@ struct IrlvCtgVhhFound: View {
                 WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                   url: URL(
                     string:
-                      "http://192.168.9.129:2025/publish-video")!
+                      "https://spectacular-taiyaki-a6924e.netlify.app/publish-video")!
                 ))
             }
         }.padding(.horizontal, 20.w)
@@ -154,7 +154,8 @@ struct IrlvCtgVhhFound: View {
                     WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
-                          "http://192.168.9.129:2025/short-video?id=\(dynamicEntity.dynamicId)")!
+                          "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"
+                      )!
                     ))
                 }
                 .overlay(
@@ -274,7 +275,8 @@ struct IrlvCtgVhhFound: View {
                     WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
-                          "http://192.168.9.129:2025/short-video?id=\(dynamicEntity.dynamicId)")!
+                          "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"
+                      )!
                     ))
                 }
                 .overlay(

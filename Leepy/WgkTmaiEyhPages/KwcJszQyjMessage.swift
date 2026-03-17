@@ -53,7 +53,7 @@ struct KwcJszQyjMessage: View {
               WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
-                    "http://192.168.9.129:2025/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
+                    "https://spectacular-taiyaki-a6924e.netlify.app/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
                 )!
               ))
           }
@@ -81,7 +81,7 @@ struct KwcJszQyjMessage: View {
               WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
-                    "http://192.168.9.129:2025/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
+                    "https://spectacular-taiyaki-a6924e.netlify.app/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
                 )!
               ))
           }
@@ -163,7 +163,7 @@ struct KwcJszQyjMessage: View {
                     WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
-                          "http://192.168.9.129:2025/private-chat?id=\(chat.chatId)"
+                          "https://spectacular-taiyaki-a6924e.netlify.app/private-chat?id=\(chat.chatId)"
                       )!
                     ))
                 }
