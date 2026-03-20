@@ -14,15 +14,6 @@ struct LeepyApp: App {
     UITabBar.appearance().backgroundColor = .clear
     UITabBar.appearance().standardAppearance = appearance
     UITabBar.appearance().scrollEdgeAppearance = appearance
-    #if DEBUG
-      Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
-      if let path = Bundle.main.path(
-        forResource:
-          "iOSInjection", ofType: "bundle")
-      {
-        Bundle(path: path)!.load()
-      }
-    #endif
     ScreenUtil.shared.updateSize()
     do {
       container =
