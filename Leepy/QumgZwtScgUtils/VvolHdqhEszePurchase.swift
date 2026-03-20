@@ -69,23 +69,26 @@ extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
     _ queue: SKPaymentQueue,
     updatedTransactions transactions: [SKPaymentTransaction]
   ) {
-    for tx in transactions {
-      switch tx.transactionState {
-      case .purchased:
-        bglcxkzmvbuiyfde(tx)
-      case .failed, .restored:
-        mnvcdyisacvb(tx)
-      case .purchasing, .deferred:
-        break
-      @unknown default:
-        break
+    Task { @MainActor in
+      for tx in transactions {
+        switch tx.transactionState {
+        case .purchased:
+          bglcxkzmvbuiyfde(tx)
+        case .failed, .restored:
+          mnvcdyisacvb(tx)
+        case .purchasing, .deferred:
+          break
+        @unknown default:
+          break
+        }
       }
     }
   }
-
 }
 extension VvolHdqhEszePurchase: SKProductsRequestDelegate {
   func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-    kfgskdbvhjfdrs = response.products
+    Task { @MainActor in
+      self.kfgskdbvhjfdrs = response.products
+    }
   }
 }
