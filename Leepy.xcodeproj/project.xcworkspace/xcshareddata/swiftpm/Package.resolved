@@ -1,15 +1,6 @@
 {
-  "originHash" : "9b2326442312212c210534f4d5421bd49d27dfbff25721b06085bb008d31d137",
+  "originHash" : "917a2b512148612347b307b5f8d624e74df48af36fa322c80901a86fc0e1317f",
   "pins" : [
-    {
-      "identity" : "hotswiftui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/johnno1962/HotSwiftUI.git",
-      "state" : {
-        "revision" : "9e701abd2da67c7cfac5b70ae6f225fa92a1c7bc",
-        "version" : "1.2.4"
-      }
-    },
     {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",

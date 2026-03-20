@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DD010D262F63DDE40088A99A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DD010D252F63DDE40088A99A /* Kingfisher */; };
-		DD8531B22F5EA2B0007C0EA0 /* HotSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD010D262F63DDE40088A99A /* Kingfisher in Frameworks */,
-				DD8531B22F5EA2B0007C0EA0 /* HotSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +70,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD32AC92F5E738900337CDC /* Build configuration list for PBXNativeTarget "Leepy" */;
 			buildPhases = (
-				DD8531AF2F5EA286007C0EA0 /* ShellScript */,
 				DDD32AB82F5E738800337CDC /* Sources */,
 				DDD32AB92F5E738800337CDC /* Frameworks */,
 				DDD32ABA2F5E738800337CDC /* Resources */,
@@ -86,7 +83,6 @@
 			);
 			name = Leepy;
 			packageProductDependencies = (
-				DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */,
 				DD010D252F63DDE40088A99A /* Kingfisher */,
 			);
 			productName = Leepy;
@@ -118,7 +114,6 @@
 			mainGroup = DDD32AB32F5E738800337CDC;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */,
 				DD010D242F63DDE40088A99A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -140,26 +135,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DD8531AF2F5EA286007C0EA0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ \"$CONFIGURATION\" != \"Debug\" ]; then\n    exit 0\nfi\n\nif [[ \"$SDK_NAME\" == *simulator* ]]; then\n    exit 0\nfi\n\nRESOURCES=\"/Applications/InjectionIII.app/Contents/Resources\"\n\nif [ -f \"$RESOURCES/copy_bundle.sh\" ]; then\n    \"$RESOURCES/copy_bundle.sh\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDD32AB82F5E738800337CDC /* Sources */ = {
@@ -298,19 +273,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6NUFR97X3A;
-				EMIT_FRONTEND_COMMAND_LINES = YES;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leepy/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to capture landscapes, portraits, and videos. Your photos and videos can decorate your profile or share with friends. They're securely stored on your device and only shared with your permission. Privacy and security are protected.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access for recording voice messages and sharing audio. Audio stays on your device unless you share. Privacy is our priority.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access your photo album data so that you can select and upload videos and pictures. All the selected files will only be used for the purposes you have approved, and they will be securely stored on your device. They will only be shared with others upon your consent.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library for sharing memorable photos/videos. It stays on your device unless you share. Access is for easy sharing and is privacy-protected.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -322,12 +296,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = (
-					"-Xlinker",
-					"-interposable",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ncvreyc.leepy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -347,18 +319,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6NUFR97X3A;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Leepy/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to capture landscapes, portraits, and videos. Your photos and videos can decorate your profile or share with friends. They're securely stored on your device and only shared with your permission. Privacy and security are protected.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs location access for sharing, discovering events, and using location-based features. Location data is used responsibly with your consent. Privacy and security are our priorities.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app needs microphone access for recording voice messages and sharing audio. Audio stays on your device unless you share. Privacy is our priority.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs to access your photo album data so that you can select and upload videos and pictures. All the selected files will only be used for the purposes you have approved, and they will be securely stored on your device. They will only be shared with others upon your consent.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to your photo library for sharing memorable photos/videos. It stays on your device unless you share. Access is for easy sharing and is privacy-protected.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -370,8 +342,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.myfy.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ncvreyc.leepy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -418,14 +391,6 @@
 				minimumVersion = 8.8.0;
 			};
 		};
-		DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/johnno1962/HotSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -433,11 +398,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DD010D242F63DDE40088A99A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		DD8531B12F5EA2B0007C0EA0 /* HotSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD8531B02F5EA2B0007C0EA0 /* XCRemoteSwiftPackageReference "HotSwiftUI" */;
-			productName = HotSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

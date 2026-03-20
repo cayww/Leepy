@@ -19,15 +19,11 @@ struct GljqWbqvDgmAgreeContent: UIViewRepresentable {
 }
 
 struct GljqWbqvDgmAgree: View {
-  #if DEBUG
-    @ObserveInjection var forceRedraw
-  #endif
+
   @EnvironmentObject var router: BtdusvhvDdsRouter
   let trvudfhvSsxcUrl: URL
   var body: some View {
-    #if DEBUG
-      let _ = forceRedraw
-    #endif
+
     GeometryReader { geo in
       Image("Assets/leepy_splash_bg").resizable().scaledToFill().ignoresSafeArea()
       ProgressView()
@@ -48,6 +44,6 @@ struct GljqWbqvDgmAgree: View {
         }
       }
     }
-    .enableInjection()
+
   }
 }

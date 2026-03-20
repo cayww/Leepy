@@ -3,9 +3,7 @@ import SwiftData
 import SwiftUI
 
 struct KwcJszQyjMessage: View {
-  #if DEBUG
-    @ObserveInjection var forceRedraw
-  #endif
+
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
   @EnvironmentObject var router: BtdusvhvDdsRouter
@@ -22,9 +20,7 @@ struct KwcJszQyjMessage: View {
     }
   }
   var body: some View {
-    #if DEBUG
-      let _ = forceRedraw
-    #endif
+
     GeometryReader { geo in
       Image("Assets/leepy_splash_bg").resizable().scaledToFill().ignoresSafeArea()
       VStack(spacing: 0) {
@@ -185,6 +181,6 @@ struct KwcJszQyjMessage: View {
         }
       }
     }
-    .enableInjection()
+
   }
 }

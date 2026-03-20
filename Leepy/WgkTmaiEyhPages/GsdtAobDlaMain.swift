@@ -2,9 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct GsdtAobDlaMain: View {
-  #if DEBUG
-    @ObserveInjection var forceRedraw
-  #endif
+
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
   @StateObject private var router: BtdusvhvDdsRouter = BtdusvhvDdsRouter()
@@ -18,9 +16,7 @@ struct GsdtAobDlaMain: View {
 
   @State private var selectedTab: Tab = .home
   var body: some View {
-    #if DEBUG
-      let _ = forceRedraw
-    #endif
+
     NavigationStack(path: $router.leepyPath) {
       TabView(selection: $selectedTab) {
         PprqKumkZetHome()
@@ -116,6 +112,6 @@ struct GsdtAobDlaMain: View {
       .ignoresSafeArea(edges: .bottom)
     }
     .environmentObject(router)
-    .enableInjection()
+
   }
 }

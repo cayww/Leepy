@@ -2,9 +2,7 @@ import SwiftData
 import SwiftUI
 
 struct YwxKvvRbdkGuide: View {
-  #if DEBUG
-    @ObserveInjection var forceRedraw
-  #endif
+
   @State private var isLoading = false
   @State private var isAgreeEula = false
   @State private var isShowEula = false
@@ -12,9 +10,7 @@ struct YwxKvvRbdkGuide: View {
   @Environment(\.modelContext) private var modelContext
   @StateObject private var router: BtdusvhvDdsRouter = BtdusvhvDdsRouter()
   var body: some View {
-    #if DEBUG
-      let _ = forceRedraw
-    #endif
+
     NavigationStack(path: $router.leepyPath) {
       GeometryReader { geometry in
         Image("Assets/leepy_guide_bg")
@@ -217,6 +213,6 @@ struct YwxKvvRbdkGuide: View {
       }
     }
     .environmentObject(router)
-    .enableInjection()
+
   }
 }

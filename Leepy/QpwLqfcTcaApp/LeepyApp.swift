@@ -1,4 +1,3 @@
-@_exported import HotSwiftUI
 import SwiftData
 import SwiftUI
 
