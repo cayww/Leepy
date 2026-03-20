@@ -65,7 +65,7 @@ extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
     fjvcxkbvjyhf.insert(config.id)
     mnvcdyisacvb(transaction, coin: config.coin)
   }
-  func paymentQueue(
+  nonisolated func paymentQueue(
     _ queue: SKPaymentQueue,
     updatedTransactions transactions: [SKPaymentTransaction]
   ) {
@@ -86,7 +86,9 @@ extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
   }
 }
 extension VvolHdqhEszePurchase: SKProductsRequestDelegate {
-  func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+  nonisolated func productsRequest(
+    _ request: SKProductsRequest, didReceive response: SKProductsResponse
+  ) {
     Task { @MainActor in
       self.kfgskdbvhjfdrs = response.products
     }

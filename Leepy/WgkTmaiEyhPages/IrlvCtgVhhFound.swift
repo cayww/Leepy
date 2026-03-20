@@ -315,6 +315,5 @@ struct IrlvCtgVhhFound: View {
         .background(Color.clear)
       }
     }
-
   }
 }
