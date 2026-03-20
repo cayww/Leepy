@@ -39,7 +39,7 @@ struct IrlvCtgVhhFound: View {
 
   // MARK: - UI
   var body: some View {
-    ZStack {
+    GeometryReader { geometry in
       bgView
 
       VStack(spacing: 0) {
