@@ -76,7 +76,7 @@ platform :ios do
       # },
       output_directory: "./build/gym",     # 指定 IPA 输出目录
       silent: true,
-      xcargs: ["-allowProvisioningUpdates","DEVELOPMENT_TEAM=HUJ36B3WHV"]
+      xcargs: ["-allowProvisioningUpdates","DEVELOPMENT_TEAM=#{team_id}"]
     )
 
     # 根据不同导出方式上传
@@ -175,7 +175,7 @@ platform :ios do
   #   update_code_signing_settings(
   #     path: "Leepy.xcodeproj",
   #     use_automatic_signing: false,
-  #     team_id: "HUJ36B3WHV",
+  #     team_id: team_id,
   #     targets: ["Leepy"],
   #     code_sign_identity: "Apple Distribution",
   #     profile_name: "match AppStore com.ncvreyc.leepy",
