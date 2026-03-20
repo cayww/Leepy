@@ -11,51 +11,60 @@ struct CoinProduct: Hashable, Identifiable, Decodable {
 @MainActor
 final class VvolHdqhEszePurchase: NSObject, ObservableObject {
 
-  @Published var products: [SKProduct] = []
-  @Published var purchasedIds: Set<String> = []
+  @Published var kfgskdbvhjfdrs: [SKProduct] = []
+  @Published var fjvcxkbvjyhf: Set<String> = []
 
-  let configs: [CoinProduct] = [
-    .init(id: "lvbsvhxcgcrvesor", price: 0.99, coin: 400),
-    .init(id: "dxismgcwewhrtezo", price: 4.99, coin: 2450),
-    .init(id: "khtxlcejaxmqcsra", price: 9.99, coin: 4900),
-    .init(id: "yadwwvxspgxwlndb", price: 19.99, coin: 9800),
-    .init(id: "qnrcuelbtiuflyky", price: 49.99, coin: 24500),
-    .init(id: "ymohxnvpkqxutvab", price: 99.99, coin: 49000),
+  let dijvfuocbjfgtrs: [CoinProduct] = [
+    .init(id: "qathgzqkvpudnhyn", price: 0.99, coin: 400),
+    .init(id: "duafsphdgogponwz", price: 1.99, coin: 800),
+    .init(id: "kfjdslqwepzmxtya", price: 2.99, coin: 1200),
+    .init(id: "avnpmwpxvquluvjh", price: 4.99, coin: 2450),
+    .init(id: "amiheafsizsziwsg", price: 9.99, coin: 5150),
+    .init(id: "illidzvnwnkqkezk", price: 19.99, coin: 10800),
+    .init(id: "qplmznxvtyskwrah", price: 29.99, coin: 15000),
+    .init(id: "kcsshxnugpymztvi", price: 49.99, coin: 29400),
+    .init(id: "xmvqplratynskdwe", price: 69.99, coin: 36000),
+    .init(id: "lgsezzfwkqfxynjc", price: 99.99, coin: 63700),
   ]
 
-  private var purchaseCompletion: ((Int) -> Void)?
+  private var mcvbvchjxkv7rues: ((Int) -> Void)?
 
   override init() {
     super.init()
     SKPaymentQueue.default().add(self)
   }
 
-  func fetchProducts() {
-    let ids = Set(configs.map(\.id))
+  private func mnvcdyisacvb(_ transaction: SKPaymentTransaction, coin: Int = 0) {
+    SKPaymentQueue.default().finishTransaction(transaction)
+    mcvbvchjxkv7rues?(coin)
+    mcvbvchjxkv7rues = nil
+  }
+
+  func ojnjkstyvcresavtrjhy(_ product: SKProduct, completion: @escaping (Int) -> Void) {
+    mcvbvchjxkv7rues = completion
+    SKPaymentQueue.default().add(SKPayment(product: product))
+  }
+  func muiodslhvbcyis() {
+    let ids = Set(dijvfuocbjfgtrs.map(\.id))
     let request = SKProductsRequest(productIdentifiers: ids)
     request.delegate = self
     request.start()
   }
-
-  func purchase(_ product: SKProduct, completion: @escaping (Int) -> Void) {
-    purchaseCompletion = completion
-    SKPaymentQueue.default().add(SKPayment(product: product))
-  }
-
-  private func finish(_ transaction: SKPaymentTransaction, coin: Int = 0) {
-    SKPaymentQueue.default().finishTransaction(transaction)
-    purchaseCompletion?(coin)
-    purchaseCompletion = nil
-  }
-}
-
-extension VvolHdqhEszePurchase: SKProductsRequestDelegate {
-  func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-    products = response.products
-  }
 }
 
 extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
+  private func bglcxkzmvbuiyfde(_ transaction: SKPaymentTransaction) {
+    guard
+      let config = dijvfuocbjfgtrs.first(where: {
+        $0.id == transaction.payment.productIdentifier
+      })
+    else {
+      mnvcdyisacvb(transaction)
+      return
+    }
+    fjvcxkbvjyhf.insert(config.id)
+    mnvcdyisacvb(transaction, coin: config.coin)
+  }
   func paymentQueue(
     _ queue: SKPaymentQueue,
     updatedTransactions transactions: [SKPaymentTransaction]
@@ -63,9 +72,9 @@ extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
     for tx in transactions {
       switch tx.transactionState {
       case .purchased:
-        handlePurchased(tx)
+        bglcxkzmvbuiyfde(tx)
       case .failed, .restored:
-        finish(tx)
+        mnvcdyisacvb(tx)
       case .purchasing, .deferred:
         break
       @unknown default:
@@ -74,16 +83,9 @@ extension VvolHdqhEszePurchase: SKPaymentTransactionObserver {
     }
   }
 
-  private func handlePurchased(_ transaction: SKPaymentTransaction) {
-    guard
-      let config = configs.first(where: {
-        $0.id == transaction.payment.productIdentifier
-      })
-    else {
-      finish(transaction)
-      return
-    }
-    purchasedIds.insert(config.id)
-    finish(transaction, coin: config.coin)
+}
+extension VvolHdqhEszePurchase: SKProductsRequestDelegate {
+  func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    kfgskdbvhjfdrs = response.products
   }
 }

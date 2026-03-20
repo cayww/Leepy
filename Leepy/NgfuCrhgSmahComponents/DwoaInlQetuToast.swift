@@ -1,8 +1,8 @@
 import Combine
 import SwiftUI
 
-final class Toast: ObservableObject {
-  static let shared = Toast()
+final class DwoaInlQetuToast: ObservableObject {
+  static let shared = DwoaInlQetuToast()
 
   @Published var message: String = ""
   @Published var isShowingToast: Bool = false
@@ -13,7 +13,7 @@ final class Toast: ObservableObject {
 
   private init() {}
 
-  func showToast(_ message: String, duration: TimeInterval = 2) {
+  func bvjcbnhjvckvrf(_ message: String, duration: TimeInterval = 2) {
     self.message = message
     withAnimation {
       self.isShowingToast = true
@@ -29,13 +29,13 @@ final class Toast: ObservableObject {
       }
   }
 
-  func showLoading() {
+  func kjdcvgvyjszdf() {
     withAnimation {
       self.isLoading = true
     }
   }
 
-  func hideLoading() {
+  func lfdkxzvbyhcxvfr() {
     withAnimation {
       self.isLoading = false
     }
@@ -43,7 +43,7 @@ final class Toast: ObservableObject {
 }
 
 struct MzyhRcjWazgToastView: View {
-  @ObservedObject var manager = Toast.shared
+  @ObservedObject var manager = DwoaInlQetuToast.shared
 
   var body: some View {
     ZStack {

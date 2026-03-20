@@ -8,7 +8,7 @@ struct IrlvCtgVhhFound: View {
   #endif
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   @Query private var dynamics: [DynamicModel]
   var filteredVideoDynamics: [DynamicModel] {
     guard let blockList = appState.wfzqCubCpmUser?.blockList else {
@@ -63,7 +63,7 @@ struct IrlvCtgVhhFound: View {
             .resizable().scaledToFit().frame(width: 40.r, height: 40.r)
             .onTapGesture {
               router.leepyPath.append(
-                WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                   url: URL(
                     string:
                       "https://spectacular-taiyaki-a6924e.netlify.app/publish-video")!
@@ -151,7 +151,7 @@ struct IrlvCtgVhhFound: View {
                 .cornerRadius(30.r)
                 .onTapGesture {
                   router.leepyPath.append(
-                    WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                    BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
                           "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"
@@ -272,7 +272,7 @@ struct IrlvCtgVhhFound: View {
                 .cornerRadius(30.r)
                 .onTapGesture {
                   router.leepyPath.append(
-                    WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                    BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
                           "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"

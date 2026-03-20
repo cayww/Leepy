@@ -44,7 +44,7 @@ struct LeepyApp: App {
     WindowGroup {
       HzbdGyvZrklContentView()
         .task {
-          bootstrapIfNeeded(context: container.mainContext)
+          iotrvunbldfkhjsvb(context: container.mainContext)
         }
         .environmentObject(appState)
         .environmentObject(purchaseManager)

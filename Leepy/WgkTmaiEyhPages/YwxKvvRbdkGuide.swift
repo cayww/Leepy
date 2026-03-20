@@ -10,7 +10,7 @@ struct YwxKvvRbdkGuide: View {
   @State private var isShowEula = false
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
-  @StateObject private var router: SvcdXfvTsxRouter = SvcdXfvTsxRouter()
+  @StateObject private var router: BtdusvhvDdsRouter = BtdusvhvDdsRouter()
   var body: some View {
     #if DEBUG
       let _ = forceRedraw
@@ -46,7 +46,7 @@ struct YwxKvvRbdkGuide: View {
           Spacer()
           Button(action: {
             if isAgreeEula {
-              router.leepyPath.append(WwaQhwoEkuRoute.gingFfkFidqLogin)
+              router.leepyPath.append(BdfuivDvufhtdsRoute.fcvukbhgrtLogin)
             } else {
               isShowEula = true
             }
@@ -106,7 +106,7 @@ struct YwxKvvRbdkGuide: View {
                     modelContext.insert(newUser)
                     appState.wfzqCubCpmUser = newUser
                   }
-                  appState.vkyeFxuEaaPhase = .vzxtUcsAkqqMain
+                  appState.vkyeFxuEaaPhase = .dfsizvhbfdsvrMain
                 }
               } catch {
               }
@@ -153,7 +153,7 @@ struct YwxKvvRbdkGuide: View {
               .underline()
               .onTapGesture {
                 if isAgreeEula {
-                  router.leepyPath.append(WwaQhwoEkuRoute.vccMliWsyRegister)
+                  router.leepyPath.append(BdfuivDvufhtdsRoute.gfbkjvcbfrRegister)
                 } else {
                   isShowEula = true
                 }
@@ -178,7 +178,7 @@ struct YwxKvvRbdkGuide: View {
                 .underline()
                 .onTapGesture {
                   router.leepyPath.append(
-                    WwaQhwoEkuRoute.zowFpvnJooAgree(
+                    BdfuivDvufhtdsRoute.kgfhjxvbgwrtAgree(
                       url: URL(string: "https://app.clhpy7fu.link/users")!))
                 }
               Text(" and ")
@@ -190,7 +190,7 @@ struct YwxKvvRbdkGuide: View {
                 .underline()
                 .onTapGesture {
                   router.leepyPath.append(
-                    WwaQhwoEkuRoute.zowFpvnJooAgree(
+                    BdfuivDvufhtdsRoute.kgfhjxvbgwrtAgree(
                       url: URL(string: "https://app.clhpy7fu.link/privacy")!))
                 }
             }
@@ -203,13 +203,13 @@ struct YwxKvvRbdkGuide: View {
           QngkUgjVaosEula(isAgreeEula: $isAgreeEula, isShowEula: $isShowEula)
         }
       }
-      .navigationDestination(for: WwaQhwoEkuRoute.self) { route in
+      .navigationDestination(for: BdfuivDvufhtdsRoute.self) { route in
         switch route {
-        case .zowFpvnJooAgree(let trvudfhvSsxcUrl):
+        case .kgfhjxvbgwrtAgree(let trvudfhvSsxcUrl):
           GljqWbqvDgmAgree(trvudfhvSsxcUrl: trvudfhvSsxcUrl)
-        case .gingFfkFidqLogin:
+        case .fcvukbhgrtLogin:
           JfsVizaSicgLogin()
-        case .vccMliWsyRegister:
+        case .gfbkjvcbfrRegister:
           CnsOybInhRegister()
         default:
           EmptyView()

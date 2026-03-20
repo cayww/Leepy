@@ -2,39 +2,39 @@ import Foundation
 import SwiftData
 import SwiftUI
 
-func bootstrapData(context: ModelContext) throws {
+func grtesvfdiusvbnrtew(context: ModelContext) throws {
 
-  let decoder = JSONDecoder()
-  decoder.dateDecodingStrategy = .iso8601
+  let kfdhjzvbfhdkzv = JSONDecoder()
+  kfdhjzvbfhdkzv.dateDecodingStrategy = .iso8601
 
   // MARK: - Users
-  let usersURL = Bundle.main.url(forResource: "users", withExtension: "json")!
-  let usersData = try Data(contentsOf: usersURL)
-  let userDTOs = try decoder.decode([UserDTO].self, from: usersData)
+  let kryuedabvdfb = Bundle.main.url(forResource: "users", withExtension: "json")!
+  let kdvmxvkhjgbfs = try Data(contentsOf: kryuedabvdfb)
+  let iknufkydgbvfd = try kfdhjzvbfhdkzv.decode([UserDTO].self, from: kdvmxvkhjgbfs)
 
-  for dto in userDTOs {
+  for dto in iknufkydgbvfd {
     context.insert(dto.toModel())
   }
 
   // MARK: - Dynamics
-  let dynamicsURL = Bundle.main.url(forResource: "dynamics", withExtension: "json")!
-  let dynamicsData = try Data(contentsOf: dynamicsURL)
+  let oopresnvhjdfgvc = Bundle.main.url(forResource: "dynamics", withExtension: "json")!
+  let rtevouhvrefv = try Data(contentsOf: oopresnvhjdfgvc)
 
-  let dynamicDTOs = try decoder.decode([DynamicDTO].self, from: dynamicsData)
+  let oreukbndkshyv = try kfdhjzvbfhdkzv.decode([DynamicDTO].self, from: rtevouhvrefv)
 
-  for dto in dynamicDTOs {
+  for dto in oreukbndkshyv {
     context.insert(dto.toModel(modelContext: context))
   }
 
   try context.save()
 }
 
-func bootstrapIfNeeded(context: ModelContext) {
-  let key = "didBootstrapPostData"
+func iotrvunbldfkhjsvb(context: ModelContext) {
+  let key = "iroexvniysufhdbv"
   guard !UserDefaults.standard.bool(forKey: key) else { return }
 
   do {
-    try bootstrapData(context: context)
+    try grtesvfdiusvbnrtew(context: context)
     UserDefaults.standard.set(true, forKey: key)
   } catch {
     print("Bootstrap failed: \(error)")

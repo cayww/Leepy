@@ -22,7 +22,7 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
   let appState: RlbHdbTvacState
   let trvudfhvSsxcUrl: URL
   let modelContext: ModelContext
-  let router: SvcdXfvTsxRouter
+  let router: BtdusvhvDdsRouter
   let purchaseManager: VvolHdqhEszePurchase
   func makeUIView(context: Context) -> WKWebView {
     // ⚙️ 网页首选项
@@ -144,12 +144,12 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
 
   class Coordinator: NSObject, WKNavigationDelegate, WKUIDelegate, WKScriptMessageHandler {
     let modelContext: ModelContext
-    let router: SvcdXfvTsxRouter
+    let router: BtdusvhvDdsRouter
     let appState: RlbHdbTvacState
     let purchaseManager: VvolHdqhEszePurchase
     weak var webView: WKWebView?
     init(
-      modelContext: ModelContext, router: SvcdXfvTsxRouter, appState: RlbHdbTvacState,
+      modelContext: ModelContext, router: BtdusvhvDdsRouter, appState: RlbHdbTvacState,
       purchaseManager: VvolHdqhEszePurchase
     ) {
       self.modelContext = modelContext
@@ -316,26 +316,26 @@ struct LweYhriIkpPrimaryContent: UIViewRepresentable {
       case JsHandlers.recharge:
         guard let key = message.body as? String else { return }
         guard
-          let product = purchaseManager.products.first(where: {
+          let product = purchaseManager.kfgskdbvhjfdrs.first(where: {
             $0.productIdentifier == key
           })
         else {
-          Toast.shared.showToast(
+          DwoaInlQetuToast.shared.bvjcbnhjvckvrf(
             "Product not found. Please check your network connection.")
           return
         }
-        Toast.shared.showLoading()
-        purchaseManager.purchase(product) { result in
-          Toast.shared.hideLoading()
+        DwoaInlQetuToast.shared.kjdcvgvyjszdf()
+        purchaseManager.ojnjkstyvcresavtrjhy(product) { result in
+          DwoaInlQetuToast.shared.lfdkxzvbyhcxvfr()
           if result > 0 {
             self.appState.tnngDfrhGkgtAddCoins(result)
             let js = "window.onRechargeSuccess && window.onRechargeSuccess(\(result))"
             DispatchQueue.main.async {
               self.webView?.evaluateJavaScript(js)
             }
-            Toast.shared.showToast("Purchase success")
+            DwoaInlQetuToast.shared.bvjcbnhjvckvrf("Purchase success")
           } else {
-            Toast.shared.showToast("Purchase failed")
+            DwoaInlQetuToast.shared.bvjcbnhjvckvrf("Purchase failed")
           }
         }
       default:
@@ -360,7 +360,7 @@ struct LweYhriIkpPrimary: View {
   @EnvironmentObject var purchaseManager: VvolHdqhEszePurchase
   let trvudfhvSsxcUrl: URL
   @Environment(\.modelContext) private var modelContext
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   @EnvironmentObject var appState: RlbHdbTvacState
   var body: some View {
     GeometryReader { geo in

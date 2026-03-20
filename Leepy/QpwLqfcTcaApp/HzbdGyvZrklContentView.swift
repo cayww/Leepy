@@ -7,11 +7,11 @@ struct HzbdGyvZrklContentView: View {
   var body: some View {
     ZStack {
       switch appState.vkyeFxuEaaPhase {
-      case .nipjSeaNvbSplash:
+      case .kjfdkvbfdvcSplash:
         LwprZdcRfqfSplash()
-      case .asqLicvGlkGuide:
+      case .kfdvnhfrtdsGuide:
         YwxKvvRbdkGuide()
-      case .vzxtUcsAkqqMain:
+      case .dfsizvhbfdsvrMain:
         GsdtAobDlaMain()
       }
       VStack {

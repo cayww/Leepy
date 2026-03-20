@@ -7,7 +7,7 @@ struct GsdtAobDlaMain: View {
   #endif
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
-  @StateObject private var router: SvcdXfvTsxRouter = SvcdXfvTsxRouter()
+  @StateObject private var router: BtdusvhvDdsRouter = BtdusvhvDdsRouter()
 
   enum Tab: Hashable {
     case home
@@ -35,11 +35,11 @@ struct GsdtAobDlaMain: View {
       .onAppear {
         UITabBar.appearance().isHidden = true
       }
-      .navigationDestination(for: WwaQhwoEkuMainRoute.self) { route in
+      .navigationDestination(for: BdfuivDvufhtdsMainRoute.self) { route in
         switch route {
         case .wfueZroFsmnPrimary(let url):
           LweYhriIkpPrimary(trvudfhvSsxcUrl: url)
-        case .zowFpvnJooAgree(let url):
+        case .kgfhjxvbgwrtAgree(let url):
           GljqWbqvDgmAgree(trvudfhvSsxcUrl: url)
         }
       }
@@ -98,7 +98,7 @@ struct GsdtAobDlaMain: View {
               )
               .onTapGesture {
                 router.leepyPath.append(
-                  WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                  BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                     url: URL(
                       string:
                         "https://spectacular-taiyaki-a6924e.netlify.app/send-dynamic")!

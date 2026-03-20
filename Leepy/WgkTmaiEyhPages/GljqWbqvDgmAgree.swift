@@ -22,7 +22,7 @@ struct GljqWbqvDgmAgree: View {
   #if DEBUG
     @ObserveInjection var forceRedraw
   #endif
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   let trvudfhvSsxcUrl: URL
   var body: some View {
     #if DEBUG

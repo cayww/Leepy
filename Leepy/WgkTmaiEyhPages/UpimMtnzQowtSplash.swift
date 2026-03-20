@@ -18,9 +18,9 @@ struct LwprZdcRfqfSplash: View {
       .frame(maxWidth: .infinity)
     }
     .task {
-      purchaseManager.fetchProducts()
+      purchaseManager.muiodslhvbcyis()
       try? await Task.sleep(for: .seconds(1))
-      appState.vkyeFxuEaaPhase = .asqLicvGlkGuide
+      appState.vkyeFxuEaaPhase = .kfdvnhfrtdsGuide
     }
   }
 }

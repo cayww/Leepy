@@ -8,7 +8,7 @@ struct KwcJszQyjMessage: View {
   #endif
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   @Query private var chats: [ChatModel]
   var filteredChats: [ChatModel] {
     guard let blockList = appState.wfzqCubCpmUser?.blockList else {
@@ -50,7 +50,7 @@ struct KwcJszQyjMessage: View {
           }
           .onTapGesture {
             router.leepyPath.append(
-              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+              BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
                     "https://spectacular-taiyaki-a6924e.netlify.app/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
@@ -78,7 +78,7 @@ struct KwcJszQyjMessage: View {
           }
           .onTapGesture {
             router.leepyPath.append(
-              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+              BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
                     "https://spectacular-taiyaki-a6924e.netlify.app/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
@@ -169,7 +169,7 @@ struct KwcJszQyjMessage: View {
                   )
                   .onTapGesture {
                     router.leepyPath.append(
-                      WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                      BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                         url: URL(
                           string:
                             "https://spectacular-taiyaki-a6924e.netlify.app/private-chat?id=\(chat.chatId)"

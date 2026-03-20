@@ -9,7 +9,7 @@ struct JfsVizaSicgLogin: View {
   @State var email: String = ""
   @State var password: String = ""
   @FocusState private var focusedField: Field?
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   @State private var isLoading = false
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
@@ -104,15 +104,17 @@ struct JfsVizaSicgLogin: View {
               let user = try modelContext.fetch(descriptor).first
               await MainActor.run {
                 guard let user = user else {
-                  Toast.shared.showToast("Invalid email or password. Please try again.")
+                  DwoaInlQetuToast.shared.bvjcbnhjvckvrf(
+                    "Invalid email or password. Please try again.")
                   return
                 }
                 appState.wfzqCubCpmUser = user
-                appState.vkyeFxuEaaPhase = .vzxtUcsAkqqMain
+                appState.vkyeFxuEaaPhase = .dfsizvhbfdsvrMain
               }
             } catch {
               await MainActor.run {
-                Toast.shared.showToast("Invalid email or password. Please try again.")
+                DwoaInlQetuToast.shared.bvjcbnhjvckvrf(
+                  "Invalid email or password. Please try again.")
               }
             }
           }

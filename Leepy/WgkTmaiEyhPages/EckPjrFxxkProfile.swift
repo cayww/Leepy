@@ -8,7 +8,7 @@ struct EckPjrFxxkProfile: View {
   #endif
   @EnvironmentObject var appState: RlbHdbTvacState
   @Environment(\.modelContext) private var modelContext
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   @Query private var dynamics: [DynamicModel]
   var filteredVideoDynamics: [DynamicModel] {
     return dynamics.filter {
@@ -34,7 +34,7 @@ struct EckPjrFxxkProfile: View {
             )
             .onTapGesture {
               router.leepyPath.append(
-                WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                   url: URL(
                     string:
                       "https://spectacular-taiyaki-a6924e.netlify.app/gold-coin")!
@@ -47,7 +47,7 @@ struct EckPjrFxxkProfile: View {
             .frame(width: 24.r, height: 24.r)
             .onTapGesture {
               router.leepyPath.append(
-                WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                   url: URL(
                     string:
                       "https://spectacular-taiyaki-a6924e.netlify.app/setup-page")!
@@ -76,7 +76,7 @@ struct EckPjrFxxkProfile: View {
               )
               .onTapGesture {
                 router.leepyPath.append(
-                  WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                  BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                     url: URL(
                       string:
                         "https://spectacular-taiyaki-a6924e.netlify.app/edit-info")!
@@ -127,7 +127,7 @@ struct EckPjrFxxkProfile: View {
           }
           .onTapGesture {
             router.leepyPath.append(
-              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+              BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
                     "https://spectacular-taiyaki-a6924e.netlify.app/fans?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
@@ -152,7 +152,7 @@ struct EckPjrFxxkProfile: View {
           }
           .onTapGesture {
             router.leepyPath.append(
-              WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+              BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                 url: URL(
                   string:
                     "https://spectacular-taiyaki-a6924e.netlify.app/follow?id=\(appState.wfzqCubCpmUser?.userId ?? "")"
@@ -256,7 +256,7 @@ struct EckPjrFxxkProfile: View {
                 .cornerRadius(30.r)
                 .onTapGesture {
                   router.leepyPath.append(
-                    WwaQhwoEkuMainRoute.wfueZroFsmnPrimary(
+                    BdfuivDvufhtdsMainRoute.wfueZroFsmnPrimary(
                       url: URL(
                         string:
                           "https://spectacular-taiyaki-a6924e.netlify.app/short-video?id=\(dynamicEntity.dynamicId)"

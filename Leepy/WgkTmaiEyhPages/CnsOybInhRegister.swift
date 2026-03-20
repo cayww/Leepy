@@ -10,7 +10,7 @@ struct CnsOybInhRegister: View {
   @State var password: String = ""
   @State var againPassword: String = ""
   @FocusState private var focusedField: Field?
-  @EnvironmentObject var router: SvcdXfvTsxRouter
+  @EnvironmentObject var router: BtdusvhvDdsRouter
   var body: some View {
     GeometryReader { geometry in
       Image("Assets/leepy_splash_bg").resizable().scaledToFill().ignoresSafeArea()
